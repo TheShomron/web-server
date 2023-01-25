@@ -90,7 +90,7 @@ io.on("connection", (socket) => {
   
   //broadcast the new code to every client
   socket.on("onChange", (code) => {
-    io.emit("getCode", code);
+    socket.broadcast.emit("getCode", code);
   });
 });
 
